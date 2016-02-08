@@ -32,7 +32,7 @@ public class Avión {
         	   pasajeros[i][0]=lectura.nextLine();
         	   System.out.println("Documento de pasajero: ");  
         	   pasajeros[i][1]=lectura.nextLine(); 
-        	   System.out.println("�Clase Ejecutiva(E) o Economica(C)?"); 
+        	   System.out.println("¿Clase Ejecutiva(E) o Economica(C)?"); 
         	   pasajeros[i][2]=lectura.nextLine();
         	  
         	   if(pasajeros[i][2].equals("C")||pasajeros[i][2].equals("c")){
@@ -137,7 +137,7 @@ public class Avión {
 		java.util.Scanner lectura= new java.util.Scanner (System.in);
 		String tipoSilla; 
 		int a=0, i=2;
-		System.out.println("�Ventana(V), pasillo(P) o centro(C)?");
+		System.out.println("¿Ventana(V), pasillo(P) o centro(C)?");
 		tipoSilla=lectura.nextLine();
 		if(tipoSilla.equals("c")||tipoSilla.equals("C")){
 			do {
@@ -233,7 +233,7 @@ public class Avión {
 		java.util.Scanner lectura= new java.util.Scanner (System.in);
 		String tipoSilla; 
 		int a=0, i=0;
-		System.out.println("�Ventana(V) o pasillo(P)?");
+		System.out.println("¿Ventana(V) o pasillo(P)?");
 		tipoSilla=lectura.nextLine();
 		if(tipoSilla.equals("V")||tipoSilla.equals("V")){
 			do {
