@@ -64,7 +64,7 @@ public class Avión {
      	   System.out.println("El numero del pasajero es: "+(Integer.parseInt(pasajeros[i][3])+1)
      	   		+ "\nEl asiento asignado es: "+pasajeros[i][6]);
      	   i++;
-     	   
+     
              break;        
         case 4: 
         	System.out.println("Ingrese numero de pasajero"); 
@@ -88,7 +88,7 @@ public class Avión {
         	 sillaEconomicaLibre(esquema);
         	 break;	
         case 9:
-       	 nombrePasajero(pasajeros);
+       	 nombrePasajero(pasajeros, i);
        	 	 break;        	 
         default: ;
                  break;
@@ -214,6 +214,8 @@ public class Avión {
 			if (esquemaViejo[i][j]==asiento){
 				  a=1;	
 				  pasajero[numeroPasajero][6]=Integer.toString(esquemaViejo[i][j]);
+				  pasajero[numeroPasajero][4]=Integer.toString(i);
+				  pasajero[numeroPasajero][5]=Integer.toString(j);
 				  esquemaViejo[i][j]=0;
 				  
 			}
@@ -227,6 +229,7 @@ public class Avión {
 			System.out.println("Asiento Ocupado");
 		}
 		return esquemaViejo;
+
 	
 }
 	public static int [][] asignarPasajeroEjecutiva(int [][] esquemaViejo, String [][] pasajero, int numeroPasajero){
@@ -285,7 +288,7 @@ public class Avión {
 	public static int [][] anularReserva(int numPasajero, String[][] pasajeros, int[][] esquema){
 		esquema[Integer.parseInt(pasajeros[numPasajero][4])][Integer.parseInt(pasajeros[numPasajero][5])]=Integer.parseInt(pasajeros[numPasajero][6]);
 		for(int i=0; i<7;i++){
-		pasajeros[numPasajero][i]=null;
+		pasajeros[numPasajero][i]=("0");
 	}
 		System.out.println("RESERVA ANULADA");
 		return esquema;
@@ -352,16 +355,16 @@ public class Avión {
         }while(i<9 && j<7 && a==0);
 			
 		}
-	public static void nombrePasajero(String [][] pasajeros){
+	public static void nombrePasajero(String [][] pasajeros, int numeroPasajeros){
 		int i=0, j=0, a=0;
 		do{
 			
-			if (pasajeros[i][0].equals(pasajeros[j][0])&&j!=i){
+			if (pasajeros[i][0].equals(pasajeros[j][0]) && j!=i){
 				  a=1;	
 				  System.out.println("Si los hay"+" ( "+pasajeros[0][i]+" )");
 			}
 		j++;
-		if(j==99){
+		if(j==numeroPasajeros){
 			j=0;
 			i++;
 		}
