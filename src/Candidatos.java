@@ -25,7 +25,7 @@ public class Candidatos {
 		System.out.println("\nEl candidato ganador es: "+ vectorGanador[2]+" con un total de "+ vectorGanador[0]+" votos, lo que representa el "+ vectorGanador[1]+"%\n");
 	}
 		System.out.println("El orden de los candidatos es: ");
-		System.out.println("1� el candidato numero "+vectorGanador[2]+" con "+vectorGanador[0]+" votos");
+		System.out.println("1º el candidato numero "+vectorGanador[2]+" con "+vectorGanador[0]+" votos");
 		totalVotos= vectorGanador[0];
 		for(int i=2; i<=candidatos;i++){
 			int[] VectorGanadorB = ordenCandidatos(MCandidatos,totalVotos,candidatos,municipios);
