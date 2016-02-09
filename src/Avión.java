@@ -371,7 +371,7 @@ public class Avión {
 		int i=0, j=0, a=0;
 		do{
 			
-			if (pasajeros[i][0].equals(pasajeros[j][0]) && j!=i && pasajeros[i][0]!=("0") && pasajeros[i][0].equalsIgnoreCase("c")){
+			if (pasajeros[i][0].equals(pasajeros[j][0]) && j!=i && pasajeros[i][0]!=("0") && pasajeros[i][3].equalsIgnoreCase("c")){
 				  a=1;	
 				  System.out.println("Si los hay"+" ( "+pasajeros[i][0]+" )");
 			}
