@@ -368,20 +368,20 @@ public class Avión {
 			
 		}
 	public static void nombrePasajero(String [][] pasajeros, int numeroPasajeros){
-		int i=2, j=2, a=0;
+		int i=0, j=0, a=0;
 		do{
 			
-			if (pasajeros[i][0].equals(pasajeros[j][0]) && j!=i && Integer.parseInt(pasajeros[i][0])!=0){
+			if (pasajeros[i][0].equals(pasajeros[j][0]) && j!=i && pasajeros[i][0]!=("0") && pasajeros[i][0].equalsIgnoreCase("c")){
 				  a=1;	
 				  System.out.println("Si los hay"+" ( "+pasajeros[i][0]+" )");
 			}
 		j++;
                 if (j==99){
-                    j=2; 
+                    j=0; 
                     i++;
                 }
 		
-		}while (a==1 && j<100 && i<100);
+		}while (a==0 && j<100 && i<100);
 		if (a==0){
 			System.out.println("No los hay");
 		}
