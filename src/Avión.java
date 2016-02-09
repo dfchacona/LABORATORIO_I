@@ -5,6 +5,7 @@ public class Avión {
 	int [][] esquema= new int [9][7];
 	String [][] pasajeros= new String [100][7];
 	llenarEsquema(esquema);
+        llenarEsquemaB(pasajeros);
 	java.util.Scanner lectura= new java.util.Scanner (System.in);
 
 	int i=0;
@@ -113,7 +114,18 @@ public class Avión {
 			}
 		}
 	}
-	
+	public static void llenarEsquemaB(String [][] esquema){
+		int x=1;
+		for (int i=0; i<100 ; i++) {
+			for (int j = 0; j < 7; j++) {
+				esquema[i][j]=("0");
+				
+					}
+				
+			
+		
+	}
+        }
 	public static void imprimirEsquema(int [][] esquema){
 		for (int i=0; i<9 ; i++) {
 			if(i==0||i==1){
@@ -356,19 +368,20 @@ public class Avión {
 			
 		}
 	public static void nombrePasajero(String [][] pasajeros, int numeroPasajeros){
-		int i=0, j=0, a=0;
+		int i=2, j=2, a=0;
 		do{
 			
-			if (pasajeros[i][0].equals(pasajeros[j][0]) && j!=i){
+			if (pasajeros[i][0].equals(pasajeros[j][0]) && j!=i && Integer.parseInt(pasajeros[i][0])!=0){
 				  a=1;	
-				  System.out.println("Si los hay"+" ( "+pasajeros[0][i]+" )");
+				  System.out.println("Si los hay"+" ( "+pasajeros[i][0]+" )");
 			}
 		j++;
-		if(j==numeroPasajeros){
-			j=0;
-			i++;
-		}
-		}while (a==0 || j==9 && i==9);
+                if (j==99){
+                    j=2; 
+                    i++;
+                }
+		
+		}while (a==1 && j<100 && i<100);
 		if (a==0){
 			System.out.println("No los hay");
 		}
