@@ -10,9 +10,9 @@
  */
 public class Parqueadero {
     public static void main (String [] args){
-        int i=0, eleccion=1; 
+        int i=0, eleccion=1, a=0; 
         int [][] esquema= new int [4][21];
-        String[][] carros= new String [80][7];
+        String[][] carros= new String [100][7];
         java.util.Scanner lectura= new java.util.Scanner (System.in);
         llenarEsquema(esquema);
         llenarEsquemaB(carros);
@@ -34,10 +34,18 @@ public class Parqueadero {
                 String Placa=lectura.nextLine();
                 carros[i][0]= Placa; 
                 System.out.println("Ingrese Hora de ingreso");
-                String HoraI=lectura.nextLine();
+                
+                do{
+                    String HoraI=lectura.nextLine();
+                if(Integer.parseInt(HoraI)>=9 && Integer.parseInt(HoraI)<=20 ){    
                 carros[i][1]= HoraI;
                 asignarCupo(esquema, carros,i);
                 i++;
+                a=1;
+                } else {
+                    System.out.println("Hora no valida");
+                }
+                }while(a==0);
         	   
                 break;
         case 3:; 
@@ -45,7 +53,11 @@ public class Parqueadero {
             System.out.println("Ingrese Placa del carro");
             String PlacaS=lectura.nextLine();
             salida(esquema, carros, PlacaS);  
-                 break;       	 
+                 break;  
+        case 4:; 
+            System.out.println("Las ganacias registradas hasta el momento son: "+determinarGanancias(carros));
+             
+                 break;                
         default: ;
                  break;
     	}
@@ -64,7 +76,7 @@ public class Parqueadero {
     }            
         public static void llenarEsquemaB(String [][] esquema){
 	int x=1;
-	for (int i=0; i<80 ; i++) {
+	for (int i=0; i<100 ; i++) {
             for (int j = 0; j < 4; j++) {
 		esquema[i][j]=("0");
 	
@@ -127,7 +139,7 @@ public class Parqueadero {
                     int HorasT=HoraS-HoraI;
                     String Costo= Integer.toString(HorasT*2000);
                     carros[j][3]=Costo; 
-                    System.out.println(Costo);
+                    System.out.println("La cantidad que debe pagar es: "+ Costo);
                     esquema=reestablecerCupo(j, carros, esquema);
                 }
       
@@ -136,8 +148,20 @@ public class Parqueadero {
 public static int [][] reestablecerCupo(int fila, String[][] carros, int[][] esquema){
 		esquema[Integer.parseInt(carros[fila][4])][Integer.parseInt(carros[fila][5])]=Integer.parseInt(carros[fila][6]);
 		for(int i=0; i<7;i++){
-		carros[fila][i]=("0");
-	}
+		if (i==3){
+                    
+                }else{
+                
+                    carros[fila][i]=("0");
+	}}
 		return esquema;
-	}    
+	}
+public static int determinarGanancias (String [][] carros){
+    int Ganancias=0;
+    for (int j = 0; j < 100; j++) {
+        Ganancias=Ganancias+(Integer.parseInt(carros[j][3]));
+    }
+    
+    return Ganancias; 
+}
 }
