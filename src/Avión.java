@@ -31,7 +31,7 @@ public class Avión {
         	   String b=lectura.nextLine();
         	   System.out.println("Nombre de pasajero: ");  
         	   pasajeros[i][0]=lectura.nextLine();
-        	   System.out.println("Documento de pasajero: ");  
+        	   System.out.println("Documento de pasajero : ");  
         	   pasajeros[i][1]=lectura.nextLine(); 
         	   System.out.println("¿Clase Ejecutiva(E) o Economica(C)?"); 
         	   pasajeros[i][2]=lectura.nextLine();
